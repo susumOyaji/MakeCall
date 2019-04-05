@@ -10,6 +10,10 @@ using Android.Widget;
 using Android.Telephony;
 
 
+using Java.Util;
+using Uri = Android.Net.Uri;
+
+
 using Xamarin.Forms;
 using MakeCall.Droid;
 
@@ -21,6 +25,23 @@ namespace MakeCall.Droid
         [Obsolete]
         public void MakeQuickCall(string PhoneNumber)
         {
+
+                var context = Forms.Context;
+               
+                var intent = new Intent(Intent.ActionCall);
+                intent.SetData(Uri.Parse("tel:" + PhoneNumber));
+                context.StartActivity(intent);
+                    
+                
+
+                
+
+
+
+
+
+
+            /*
             try
             {
                 var uri = Android.Net.Uri.Parse(string.Format("tel:{0}", PhoneNumber));
@@ -31,7 +52,7 @@ namespace MakeCall.Droid
             }
             catch(Exception ex)
             {
-                /*
+
                 new AlertDialog.Builder(Android.App.Application.Context).SetPositiveButton("OK", (sender, args) =>
                  {
 
@@ -39,7 +60,7 @@ namespace MakeCall.Droid
                 .SetMessage(ex.ToString())
                 .SetTitle("Android Exception")
                 .Show();
-                */
+
 
                 var dlg = new AlertDialog.Builder(Android.App.Application.Context);
                 dlg.SetTitle("タイトル");
@@ -52,7 +73,7 @@ namespace MakeCall.Droid
 
 
 
-            }
+            }*/
             
         }
     }
