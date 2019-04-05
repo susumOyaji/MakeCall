@@ -18,6 +18,7 @@ namespace MakeCall.Droid
 {
     public class PhoneCall_Droid : IPhoneCall
     {
+        [Obsolete]
         public void MakeQuickCall(string PhoneNumber)
         {
             try
@@ -37,6 +38,18 @@ namespace MakeCall.Droid
                 .SetMessage(ex.ToString())
                 .SetTitle("Android Exception")
                 .Show();
+
+                var dlg = new AlertDialog.Builder(this);
+                dlg.SetTitle("タイトル");
+                dlg.SetMessage("メッセージ");
+                dlg.SetPositiveButton( //OKボタンの処理
+                    "OK", (s, a) => Toast.MakeText(this, "OK", ToastLength.Short).Show());
+                dlg.SetNegativeButton( //Cancelボタンの処理
+                    "Cancel", (s, a) => Toast.MakeText(this, "Cancel", ToastLength.Short).Show());
+                dlg.Create().Show();
+
+
+
             }
             
         }
