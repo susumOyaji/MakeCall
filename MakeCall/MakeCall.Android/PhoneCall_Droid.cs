@@ -31,6 +31,7 @@ namespace MakeCall.Droid
             }
             catch(Exception ex)
             {
+                /*
                 new AlertDialog.Builder(Android.App.Application.Context).SetPositiveButton("OK", (sender, args) =>
                  {
 
@@ -38,14 +39,15 @@ namespace MakeCall.Droid
                 .SetMessage(ex.ToString())
                 .SetTitle("Android Exception")
                 .Show();
+                */
 
-                var dlg = new AlertDialog.Builder(this);
+                var dlg = new AlertDialog.Builder(Android.App.Application.Context);
                 dlg.SetTitle("タイトル");
                 dlg.SetMessage("メッセージ");
                 dlg.SetPositiveButton( //OKボタンの処理
-                    "OK", (s, a) => Toast.MakeText(this, "OK", ToastLength.Short).Show());
+                    "OK", (s, a) => Toast.MakeText(Android.App.Application.Context, "OK", ToastLength.Short).Show());
                 dlg.SetNegativeButton( //Cancelボタンの処理
-                    "Cancel", (s, a) => Toast.MakeText(this, "Cancel", ToastLength.Short).Show());
+                    "Cancel", (s, a) => Toast.MakeText(Android.App.Application.Context, "Cancel", ToastLength.Short).Show());
                 dlg.Create().Show();
 
 

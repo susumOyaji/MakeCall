@@ -16,7 +16,7 @@ namespace MakeCall
             Entry numEntry = new Entry
             {
                 Placeholder = "Contact numger",
-                Text = "",
+                Text = "1234567890",
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalOptions = LayoutOptions.CenterAndExpand
             };
@@ -42,6 +42,7 @@ namespace MakeCall
 
             call_btn.Clicked += (sender, args) =>
             {
+                
                 try
                 {
                     if(numEntry.Text == "")
