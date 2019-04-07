@@ -8,6 +8,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Telephony;
+using Android.InputMethodServices;
+using Android.Telecom;
 
 
 using Java.Util;
@@ -23,27 +25,34 @@ namespace MakeCall.Droid
     public class PhoneCall_Droid : IPhoneCall
     {
         [Obsolete]
-        public void MakeQuickCall(string PhoneNumber)
+        public string MakeQuickCall(string PhoneNumber)
         {
 
             var context = Forms.Context;
-            /*   
-            var intent = new Intent(Intent.ActionCall);
-            intent.SetData(Uri.Parse("tel:" + PhoneNumber));
-            context.StartActivity(intent);
-            */
 
+            try
+            {
+                var intent = new Intent(Intent.ActionCall);
+                intent.SetData(Uri.Parse("tel:" + PhoneNumber));
+                context.StartActivity(intent);
 
+                return "true";
+            }
+            catch (ActivityNotFoundException ex)
+            {
+                return ex.ToString();
+            }
+            /*
             var callIntent = new Intent(Intent.ActionCall);
             new AlertDialog.Builder(context)
                 .SetMessage("Call " + PhoneNumber + "?")
                 .SetNeutralButton("Call", delegate {
-                    callIntent.SetData(Android.Net.Uri.Parse("tel:" + PhoneNumber));
+                    callIntent.SetData(Uri.Parse("tel:" + PhoneNumber));
                     context.StartActivity(callIntent);
                 })
                 .SetNegativeButton("Cancel", delegate { })
                 .Show();
-        
+            */
 
 
 

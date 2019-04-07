@@ -51,7 +51,7 @@ namespace MakeCall
                     }
                     else
                     {
-                        DependencyService.Get<IPhoneCall>().MakeQuickCall(numEntry.Text.ToString());
+                        var snser = DependencyService.Get<IPhoneCall>().MakeQuickCall(numEntry.Text.ToString());
                     }
                 }
                 catch(Exception ex)

@@ -3,4 +3,22 @@
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
 	<application android:label="MakeCall.Android"></application>
 	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.WRITE_CONTACTS" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+	<uses-permission android:name="android.permission.READ_CALL_LOG" />
+	<activity android:name="com.companyname.MainActivity" android:label="MakeCall" android:exported="true">
+		<intent-filter>
+			<action android:name="android.intent.action.MAIN"></action>
+		</intent-filter>
+		<!--android:name このサービスを実装するクラスに置き換える必要があります-->
+		<service android:name="com.companyname.package.PhoneCall_Droid" android:permission="android.permission.BIND_INCALL_SERVICE">
+			<mete-data android:name="android.telecom.IN_CALL_SERVICE_UI" android:value="true" />
+			<meta-data android:name="android.telecom.IN_CALL_SERVICE_RINGING" android:value="true" />
+			<intent-filter>
+				<action android:name="android.telecom.InCallService" />
+			</intent-filter>
+		</service>
+	</activity>
 </manifest>

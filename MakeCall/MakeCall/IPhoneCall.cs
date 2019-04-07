@@ -11,7 +11,7 @@ namespace MakeCall
 {
         public interface IPhoneCall
         {
-        void MakeQuickCall(string PhoneNumber);
+            string MakeQuickCall(string PhoneNumber);
         }
     
 }

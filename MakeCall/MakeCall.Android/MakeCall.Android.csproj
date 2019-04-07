@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MakeCall\MakeCall.csproj">
-      <Project>{A85C7AA0-4ECB-44BF-8D80-C8625FE39922}</Project>
+      <Project>{3271F375-5CE3-411E-9D3D-43D38B4DB006}</Project>
       <Name>MakeCall</Name>
     </ProjectReference>
   </ItemGroup>
