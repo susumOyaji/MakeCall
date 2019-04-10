@@ -11,32 +11,38 @@ using Android.Telephony;
 using Android.InputMethodServices;
 using Android.Telecom;
 
-
 using Java.Util;
 using Uri = Android.Net.Uri;
 
 
 using Xamarin.Forms;
 using MakeCall.Droid;
+using Android.Text;
 
 [assembly:Dependency(typeof(PhoneCall_Droid))]
 namespace MakeCall.Droid
 {
-    public class PhoneCall_Droid : IPhoneCall
+   public class PhoneCall_Droid : IPhoneCall
     {
         [Obsolete]
         public string MakeQuickCall(string PhoneNumber)
         {
+           
 
-            var context = Forms.Context;
+
 
             try
             {
                 var intent = new Intent(Intent.ActionCall);
+                var context = Forms.Context;
+                //String stateString = intent.GetStringExtra(TelephonyManager.ExtraState);
+                //var extras = intent.GetExtras();
+                //   string extras = intent.GetStringExtra;
+                //string stateString = extras.get.getString(TelephonyManager.ExtraState);
+                //string state = null;
                 intent.SetData(Uri.Parse("tel:" + PhoneNumber));
                 context.StartActivity(intent);
-
-                return "true";
+                return null;
             }
             catch (ActivityNotFoundException ex)
             {
