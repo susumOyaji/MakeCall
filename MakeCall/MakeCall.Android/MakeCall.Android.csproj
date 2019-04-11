@@ -69,7 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MyConnectionService_Droid.cs" />
     <Compile Include="PhoneCall_Droid.cs" />
+    <Compile Include="PhoneDialer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,18 +110,6 @@
       <Project>{3271F375-5CE3-411E-9D3D-43D38B4DB006}</Project>
       <Name>MakeCall</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App_Droid.cs" />
-    <Compile Include="CallActivity_Droid.cs" />
-    <Compile Include="CallService_Droid.cs" />
-    <Compile Include="CallStateString_Droid.cs" />
-    <Content Include="DialerActivity.java" />
-    <Content Include="IncomingCallReceiver.java" />
-    <Content Include="ITelephony.java" />
-    <Content Include="MainActivity.java" />
-    <Content Include="MyConnectionService.txt" />
-    <Compile Include="OngoingCall_Droid.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

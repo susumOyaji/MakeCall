@@ -22,24 +22,22 @@ using Android.Text;
 [assembly:Dependency(typeof(PhoneCall_Droid))]
 namespace MakeCall.Droid
 {
-   public class PhoneCall_Droid : IPhoneCall
+    public class PhoneCall_Droid : IPhoneCall
     {
         [Obsolete]
         public string MakeQuickCall(string PhoneNumber)
         {
-           
-
-
-
-            try
+           try
             {
                 var intent = new Intent(Intent.ActionCall);
                 var context = Forms.Context;
-                //String stateString = intent.GetStringExtra(TelephonyManager.ExtraState);
-                //var extras = intent.GetExtras();
-                //   string extras = intent.GetStringExtra;
-                //string stateString = extras.get.getString(TelephonyManager.ExtraState);
-                //string state = null;
+        //String stateString = intent.GetStringExtra(TelephonyManager.ExtraState);
+        //var extras = intent.GetExtras();
+        //   string extras = intent.GetStringExtra;
+        //string stateString = extras.get.getString(TelephonyManager.ExtraState);
+        //string state = null;
+                //Device.OpenUri(new Uri("tel:528331607211"));
+
                 intent.SetData(Uri.Parse("tel:" + PhoneNumber));
                 context.StartActivity(intent);
                 return null;
@@ -65,40 +63,73 @@ namespace MakeCall.Droid
 
 
 
-        /*
-        try
-        {
-            var uri = Android.Net.Uri.Parse(string.Format("tel:{0}", PhoneNumber));
-            var intent = new Intent(Intent.ActionCall, uri);
+            /*
+            try
+            {
+                var uri = Android.Net.Uri.Parse(string.Format("tel:{0}", PhoneNumber));
+                var intent = new Intent(Intent.ActionCall, uri);
 
-            Xamarin.Forms.Forms.Context.StartActivity(intent);
+                Xamarin.Forms.Forms.Context.StartActivity(intent);
+
+            }
+            catch(Exception ex)
+            {
+
+                new AlertDialog.Builder(Android.App.Application.Context).SetPositiveButton("OK", (sender, args) =>
+                 {
+
+                 })
+                .SetMessage(ex.ToString())
+                .SetTitle("Android Exception")
+                .Show();
+
+
+                var dlg = new AlertDialog.Builder(Android.App.Application.Context);
+                dlg.SetTitle("タイトル");
+                dlg.SetMessage("メッセージ");
+                dlg.SetPositiveButton( //OKボタンの処理
+                    "OK", (s, a) => Toast.MakeText(Android.App.Application.Context, "OK", ToastLength.Short).Show());
+                dlg.SetNegativeButton( //Cancelボタンの処理
+                    "Cancel", (s, a) => Toast.MakeText(Android.App.Application.Context, "Cancel", ToastLength.Short).Show());
+                dlg.Create().Show();
+
+
+
+            }*/
 
         }
-        catch(Exception ex)
-        {
-
-            new AlertDialog.Builder(Android.App.Application.Context).SetPositiveButton("OK", (sender, args) =>
-             {
-
-             })
-            .SetMessage(ex.ToString())
-            .SetTitle("Android Exception")
-            .Show();
-
-
-            var dlg = new AlertDialog.Builder(Android.App.Application.Context);
-            dlg.SetTitle("タイトル");
-            dlg.SetMessage("メッセージ");
-            dlg.SetPositiveButton( //OKボタンの処理
-                "OK", (s, a) => Toast.MakeText(Android.App.Application.Context, "OK", ToastLength.Short).Show());
-            dlg.SetNegativeButton( //Cancelボタンの処理
-                "Cancel", (s, a) => Toast.MakeText(Android.App.Application.Context, "Cancel", ToastLength.Short).Show());
-            dlg.Create().Show();
 
 
 
-        }*/
 
-    }
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }//Class to end
+
 }
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
