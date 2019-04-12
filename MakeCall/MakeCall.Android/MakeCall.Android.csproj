@@ -71,7 +71,6 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="MyConnectionService_Droid.cs" />
     <Compile Include="PhoneCall_Droid.cs" />
-    <Compile Include="PhoneDialer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

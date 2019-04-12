@@ -38,7 +38,7 @@ namespace MakeCall.Droid
         //string state = null;
                 //Device.OpenUri(new Uri("tel:528331607211"));
 
-                intent.SetData(Uri.Parse("tel:" + PhoneNumber));
+                intent.SetData(Android.Net.Uri.Parse("tel:" + PhoneNumber));
                 context.StartActivity(intent);
                 return null;
             }
